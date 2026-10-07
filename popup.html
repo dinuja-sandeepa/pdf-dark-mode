@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDF Dark Mode</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="icons/icon48.png" alt="Logo" class="logo" />
+      <h1>PDF Dark Mode</h1>
+    </header>
+
+    <section class="appearance">
+      <label class="section-label">Appearance</label>
+      <div class="mode-buttons">
+        <button class="mode-btn" data-mode="light" id="btn-light" title="Original PDF">
+          <img src="images/light-mode.png" alt="Light" class="icon" />
+          <span>Light</span>
+        </button>
+        <button class="mode-btn" data-mode="dark" id="btn-dark" title="Dark background + light content">
+          <img src="images/dark-mode.png" alt="Dark" class="icon" />
+          <span>Dark</span>
+        </button>
+        <button class="mode-btn" data-mode="sepia" id="btn-sepia" title="Warm comfortable reading">
+          <img src="images/sepia-mode.png" alt="Sepia" class="icon" />
+          <span>Sepia</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="controls">
+      <div class="control-row">
+        <label for="darkness">Darkness</label>
+        <div class="slider-row">
+          <span class="slider-label">Light</span>
+          <input type="range" id="darkness" min="0" max="100" value="70" />
+          <span class="slider-label">Dark</span>
+        </div>
+        <div class="value-display" id="darkness-value">70%</div>
+      </div>
+
+      <div class="control-row">
+        <label for="brightness">Brightness</label>
+        <div class="slider-row">
+          <span class="slider-label">☀️</span>
+          <input type="range" id="brightness" min="40" max="120" value="100" />
+          <span class="slider-label">🌑</span>
+        </div>
+        <div class="value-display" id="brightness-value">100%</div>
+      </div>
+    </section>
+
+    <section class="options">
+      <label class="checkbox-row">
+        <input type="checkbox" id="follow-system" />
+        <span>Follow system theme</span>
+      </label>
+    </section>
+
+    <section class="rate-section" id="rate-section">
+      <div class="rate-prompt">Enjoying PDF Dark Mode?</div>
+      <div class="stars" id="stars">
+        <button class="star" data-value="1" aria-label="1 star">★</button>
+        <button class="star" data-value="2" aria-label="2 stars">★</button>
+        <button class="star" data-value="3" aria-label="3 stars">★</button>
+        <button class="star" data-value="4" aria-label="4 stars">★</button>
+        <button class="star" data-value="5" aria-label="5 stars">★</button>
+      </div>
+      <div class="rate-thanks hidden" id="rate-thanks">Thanks for your feedback! 💙</div>
+    </section>
+
+    <footer>
+      <div class="shortcut">Shortcut: <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd></div>
+      <div class="note">Tip: Enable “Allow access to file URLs” in extension details for local PDFs.</div>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
